@@ -23,14 +23,17 @@ ruleTester.run("hug", rule, {
     valid: [
 
         // give me some code that won't trigger a warning
+        {
+            code: "function foo () { return( bar ); };",
+        }
     ],
 
     invalid: [
         {
             code: "function foo () { return bar; };",
             errors: [{
-                message: "Fill me in.",
-                type: "Me too"
+                message: "return statement needs a hug",
+                type: "ReturnStatement"
             }]
         }
     ]
