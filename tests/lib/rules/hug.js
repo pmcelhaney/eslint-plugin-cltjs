@@ -33,8 +33,9 @@ ruleTester.run("hug", rule, {
             code: "function foo () { return bar; };",
             errors: [{
                 message: "return statement needs a hug",
-                type: "ReturnStatement"
-            }]
+                type: "ReturnStatement",
+            }],
+            output: "function foo () { return( bar ); };"
         }
     ]
 });
